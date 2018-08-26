@@ -1,0 +1,66 @@
+@import '../assets/css/bootstrap.min.css';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 10px;
+
+  table {
+    width: 100%;
+    box-shadow: 0 0 50px #ccc;
+    font-size: 16px;
+
+    th {
+      text-align: center;
+    }
+    tr > td:first-child {
+      vertical-align: middle;
+    }
+    .prevMonthTh {
+      border-right: none;
+    }
+    .nextMonthTh {
+      border-left: none;
+    }
+  }
+}
+.btn-light {
+  width: 100%;
+}
+
+#currentMonth {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: none;
+  border-right: none;
+}
+
+.mybtn {
+  display: block;
+  padding: 0;
+  margin: 0 auto;
+  border-radius: unset;
+  width: 25px;
+  height: 15px;
+  font-size: 0;
+  text-align: center;
+  transition: 0.2s;
+}
+.mybtn:hover {
+  background: #2dd42d !important;
+  transform: scale(1.2);
+}
+
+.mybtn[title=""] {
+  background: red;
+}
+
+.mybtn:active {
+  background: #24c224 !important;
+  transform: scale(1.2);
+}
