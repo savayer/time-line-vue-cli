@@ -1,34 +1,31 @@
-<template>
-	<div id="app">
-        <div class="wrapper" id="vm">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th rowspan="2"></th>
-                        <th class="prevMonthTh">
-                            <button id="prevMonth" class="btn btn-warning" @click="setPrevMonth(currentMonth, currentYear)">
-                                    <span class="glyphicon glyphicon-chevron-left"></span>
-                            </button>
-                        </th>
-                        <th id="currentMonth" :colspan="countDaysOfMonth-2" > {{ currentMonth }} {{ currentYear }} </th>
-                        <th class="nextMonthTh">
-                            <button id="nextMonth" class="btn btn-warning" @click="setNextMonth(currentMonth, currentYear)">
-                                    <span class="glyphicon glyphicon-chevron-right"></span>
-                            </button>
-                        </th>
-                    </tr>
-                    <tr class="daysCell">
-                        <th v-for="num in countDaysOfMonth" :key="num">{{ num }}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <TableRow v-for="(countryData, countryKey) in parseData" :key="countryKey" :country-data="countryData" :country="countryKey" 
-                              :count-days="countDaysOfMonth" />                    
-                </tbody>
-            </table>
-		</div>
-
-	</div>
+<template>	
+    <div class="wrapper">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th rowspan="2"></th>
+                    <th class="prevMonthTh">
+                        <button id="prevMonth" class="btn btn-warning" @click="setPrevMonth(currentMonth, currentYear)">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                        </button>
+                    </th>
+                    <th id="currentMonth" :colspan="countDaysOfMonth-2" > {{ currentMonth }} {{ currentYear }} </th>
+                    <th class="nextMonthTh">
+                        <button id="nextMonth" class="btn btn-warning" @click="setNextMonth(currentMonth, currentYear)">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </th>
+                </tr>
+                <tr class="daysCell">
+                    <th v-for="num in countDaysOfMonth" :key="num">{{ num }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <TableRow v-for="(countryData, countryKey) in parseData" :key="countryKey" :country-data="countryData" :country="countryKey" 
+                            :count-days="countDaysOfMonth" />                    
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>

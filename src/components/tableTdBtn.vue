@@ -1,25 +1,17 @@
 <template>
-    <td :title="eventDate">
-        <button class="btn btn-info mybtn morning" :title="titleM" ></button>
-        <button class="btn btn-primary mybtn day" :title="titleD" ></button>
-        <button class="btn btn-secondary mybtn evening" :title="titleE" ></button>
+    <td>
+        <button class="btn btn-info mybtn morning" :title="objectkey" ></button>
+        <button class="btn btn-primary mybtn day" title="parseEventDate(eventDate.day.title)" ></button>
+        <button class="btn btn-secondary mybtn evening" title="parseEventDate(eventDate.evening.title)" ></button>
     </td>
 </template>
 
 <script>
 export default {
-    props: {
-        titleD: {
-            type: String
-        },
-        titleM: {
-            type: String
-        },
-        titleE: {
-            type: String
-        },
-        eventDate: {
-            type: String
+    props: ['eventDate', 'objectkey'], //eventDate = '' or Object
+    methods: {
+        parseEventDate(str) {
+            return str === undefined ? 'Свободно' : str;
         }
     }
 };
