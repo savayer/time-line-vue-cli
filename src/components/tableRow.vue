@@ -1,7 +1,8 @@
 <template>
     <tr>
         <td> {{ country }} </td>
-        <TableTdBtn v-for="n in countDays" :event-date="parseCountryData(countryData, n, indexKeyOfObject)" :objectkey="firstKeyAttr" :key="n" />
+        <TableTdBtn v-for="n in countDays" :event-date="parseCountryData(countryData, n, indexKeyOfObject)" 
+        :key="n" :morning="titleM" :day="titleD" :evening="titleE" />
     </tr>
 </template>
 
@@ -15,7 +16,9 @@ export default {
     data() {
         return {
             indexKeyOfObject: 0,
-            firstKeyAttr: ''
+            titleM: '',
+            titleD: '',
+            titleE: ''
         }
     },
     props: {
@@ -45,26 +48,18 @@ export default {
                     return '';
                 } else if (dateOfThisEvent[2] == indexDay) {
                     eventsCurrentDate[firstKey] = obj[ firstKey ];
-                    this.indexKeyOfObject++; //когда дата в обьекте равна дате отрисованному TD, мы переходим к следюущему ключу обьекта, то есть к следующей дате
-                    this.firstKeyAttr = firstKey; // вспомогательный атрибут, чтобы в tableTdBtn обратиться к обьекту как eventDate[firstKeyAttr].morning.title
-                    console.log(eventsCurrentDate[firstKey].morning.title);
+                    this.indexKeyOfObject++; //когда дата в обьекте равна дате отрисованному TD, мы переходим к следюущему ключу обьекта, то есть к следующей дате                    
+                    
+                    /* дошло, что обьект передевать не варинт, ибо реактивность в данном случае ломает что нужно, поэтому созданы свойства
+                    
+                    а нет, один чёрт*/
+                    this.titleM = eventsCurrentDate[firstKey].morning.title === undefined ? '' : eventsCurrentDate[firstKey].morning.title;
+                    // this.titleD = this.isUndefined(eventsCurrentDate[firstKey].day.title);
+                    // this.titleE = this.isUndefined(eventsCurrentDate[firstKey].evening.title);                    
+                    //console.log(this.titleM);
                 }
             }
             return eventsCurrentDate;
-            /*
-                в eventDate передан обьект вида:
-                {
-                    '2018-08-23': {
-                        morning: {
-                            title: 'бла бла'
-                        },
-                        day: {
-                            title: 'Юзер 28: рассылок: 21'
-                        }
-                    }
-                }
-                да, такой же, но только с определенным индексом
-            */ 
         }
     }
 }
