@@ -1,8 +1,8 @@
 <template>
     <td>
         <button class="btn btn-info mybtn morning" :title="getTitle(dayData.morning)" :data-busy="isTitle(dayData.morning)"></button>
-        <button class="btn btn-primary mybtn day" :title="getTitle(dayData.day)" :data-busy="isTitle(dayData.morning)"></button>
-        <button class="btn btn-secondary mybtn evening" :title="getTitle(dayData.evening)" :data-busy="isTitle(dayData.morning)"></button>
+        <button class="btn btn-primary mybtn day" :title="getTitle(dayData.day)" :data-busy="isTitle(dayData.day)"></button>
+        <button class="btn btn-secondary mybtn evening" :title="getTitle(dayData.evening)" :data-busy="isTitle(dayData.evening)"></button>
     </td>
 </template>
 
