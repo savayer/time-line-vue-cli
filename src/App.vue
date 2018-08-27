@@ -61,8 +61,8 @@ export default {
     },
     setNextMonth() {
       let date = this.getCurrentDate().add(2, 'month')
-      window.console.log(date)
-      window.console.log(date.month())
+      /* window.console.log(date)
+      window.console.log(date.month()) */
       this.setMonth(date.year(), date.month())
     },
     setMonth(year = null, month = null) {

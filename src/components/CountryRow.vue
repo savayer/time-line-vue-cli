@@ -4,8 +4,11 @@
         <day-buttons
                 v-for="dayIndex in countDays"
                 :key="dayIndex"
+                :country="country"
+                :now-date="getCurrentDate(dayIndex)._i"   
                 :day-data="getDayData(dayIndex)"
         />
+        <!--  -->
     </tr>
 </template>
 
