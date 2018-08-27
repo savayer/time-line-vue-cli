@@ -50,14 +50,27 @@ body {
   font-size: 0;
   text-align: center;
   transition: 0.2s;
+  border: 1px solid #fff !important;
 }
 .mybtn:hover {
   background: #2dd42d !important;
   transform: scale(1.2);
 }
 
-.mybtn[title=""] {
+.mybtn {
   background: red;
+}
+
+.mybtn.morning[data-busy="1"] {
+  background: #31b0d5;
+}
+
+.mybtn.day[data-busy="1"] {
+  background: #337ab7;
+}
+
+.mybtn.evening[data-busy="1"] {
+  background: #dcdcdc;
 }
 
 .mybtn:active {
