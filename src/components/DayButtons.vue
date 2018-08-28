@@ -39,7 +39,7 @@
           sendPushData(date, timeOfDay, country) {
             let timeOfDays = ['morning', 'day', 'evening'];
             let result = confirm(`Зарегистрировать отправку уведомлений для ${country} на ${timeOfDays[timeOfDay]} ${date}?`);
-            //if (!result) alert('Отменено'); else alert('Типа отправлено');
+            if (!result) alert('Отменено'); else alert('Типа отправлено');
           }
 
         }

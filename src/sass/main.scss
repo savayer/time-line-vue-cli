@@ -17,9 +17,15 @@ body {
 
     th {
       text-align: center;
+      &.today-day {
+        background: #f0ad4e;
+      }
     }
     tr > td:first-child {
       vertical-align: middle;
+      font-size: 18px;
+      max-width: 130px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .prevMonthTh {
       border-right: none;

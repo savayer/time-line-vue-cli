@@ -17,7 +17,7 @@
                     </th>
                 </tr>
                 <tr class="daysCell">
-                    <th v-for="num in countDaysOfMonth" :key="num">{{ num }}</th>
+                    <th v-for="num in countDaysOfMonth" :key="num" :class="dayToday(num)">{{ num }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,6 +76,9 @@ export default {
     },
     getCurrentDate(year = null, month = null) {
       return this.$moment((year || this.current.year) + '-' + (month || this.current.month), 'YYYY-MM')
+    },
+    dayToday(num) {
+      return (new Date).getDate() == num ? 'today-day' : '';
     }
   }
 };
