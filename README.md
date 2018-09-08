@@ -1,6 +1,6 @@
 # timeline
 
-![timeline](https://github.com/savayer/time-line-vue-cli/tree/master/src/timeline.png)
+![timeline](https://raw.githubusercontent.com/savayer/time-line-vue-cli/master/src/timeline.png)
 
 ## Project setup
 ```
